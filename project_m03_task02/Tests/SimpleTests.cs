@@ -29,7 +29,7 @@ namespace project_m03_task02.Tests
             AllureLifecycle.Instance.CleanupResultDirectory();
 
            var opt = new ChromeOptions();
-            opt.AddArguments("--headless", "--disable-gpu", "--no-sandbox");
+            opt.AddArguments("--headless", "--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage");
             _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), opt);
             _driver.Manage().Window.FullScreen();
             _driver.Navigate().GoToUrl(_homeURL);
